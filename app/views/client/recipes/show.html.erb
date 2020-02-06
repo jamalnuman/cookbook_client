@@ -1,0 +1,20 @@
+<a href="/client/recipes">Home</a>
+<h2><%= @recipe["title"] %></h2>
+<h3>Chef: <%= @recipe["chef"] %></h3>
+<h5>Prep Time: <%= @recipe["formatted"]["prep_time"] %></h5>
+<h4>ingredients: </h4>
+
+<ul>
+  <% @recipe["formatted"]["ingredients"].each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>  
+
+<h4>Directions: <%= @recipe["directions"] %></h4>
+
+<ol>
+  <% @recipe["formatted"]["directions"].each do |direction| %>
+    <li><%= direction %></li>
+  <% end %>
+</ol>
+
