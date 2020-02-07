@@ -23,7 +23,6 @@ class Client::RecipesController < ApplicationController
                         "http://localhost:3000/api/recipes", 
                         form: client_params
                         )
-    
     render "create.html.erb"
 
   end
