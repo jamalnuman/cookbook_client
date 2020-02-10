@@ -1,20 +1,33 @@
-<a href="/client/recipes">Home</a>
-<h2><%= @recipe["title"] %></h2>
+<!-- <a href="/client/recipes">Home</a>this allows you to click on a link and return home -->
+<h2>Name of Recipe: <%= @recipe["title"] %></h2>
 <h3>Chef: <%= @recipe["chef"] %></h3>
 <h5>Prep Time: <%= @recipe["formatted"]["prep_time"] %></h5>
-<h4>ingredients: </h4>
+<h4>Ingredients: </h4>
 
-<ul>
+<ul> <!-- this shuold sit outside the loop -->
   <% @recipe["formatted"]["ingredients"].each do |ingredient| %>
     <li><%= ingredient %></li>
   <% end %>
 </ul>  
 
-<h4>Directions: <%= @recipe["directions"] %></h4>
+<h4>Directions: </h4>
 
-<ol>
+<ol> <!-- these should sit outside the loop -->
   <% @recipe["formatted"]["directions"].each do |direction| %>
     <li><%= direction %></li>
   <% end %>
 </ol>
+
+<div>
+  <a href="/client/recipes/<%= @recipe["id"] %>/edit">Edit</a> <!-- Again we are using quotations for the id cause we are working with json..the href here is the url for the edit page -->
+</div>
+
+<br>
+
+<div>
+  <%= form_tag "/client/recipes/#{@recipe["id"]}", method: :delete do %>
+    <input type="submit" value="Delete">
+  <% end %>
+</div> <!-- similar to sending the "new" action in a secure form, we are sending the destroy action in a secure form.
+ -->
 

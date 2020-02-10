@@ -1,0 +1,20 @@
+<h1>Recipe Edit Form</h1>
+<%= form_tag "/client/recipes/#{ @recipe["id"] }", method: :patch do %> 
+  <div>
+    Title: <input type="text" name="title" value="<%= @recipe["title"] %>"> <!-- The 'value' is used to help auto-populate the form fields in the edit form. and you also use quotations and not symbols to pull info cause you are working with the json return from the api request above. refer to the controller for more -->
+  </div>
+  <div>
+    Prep Time: <input type="text" name="prep_time" value="<%= @recipe["prep_time"] %>">
+  </div>
+  <div>
+    Ingredients: <input type="text" name="ingredients" value="<%= @recipe["ingredients"] %>">
+  </div>
+  <div>
+    Directions: <input type="text" name="directions" value="<%= @recipe["directions"] %>">
+  </div>
+  <div>
+    Image Url: <input type="text" name="image_url" value="<%= @recipe["image_url"] %>">
+  </div>
+  <input type="submit" value="Update Recipe"> <!-- the submit button is needed for the new/create actions -->
+<!-- </form> -->
+<% end %>

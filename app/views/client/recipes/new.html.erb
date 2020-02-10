@@ -1,8 +1,9 @@
+<h1>New Recipe Form</h1>
 <!-- <form action="/client/recipes" method="post">
  --> 
 <%= form_tag "/client/recipes", method: :post do %> 
   <div>
-    Title: <input type="text" name="title">
+    Title: <input type="text" name="title"> <!-- These are the names of the params key, and are sent to the create action in the controller..cause new and create work together on this without a backend   -->
   </div>
   <div>
     Prep Time: <input type="text" name="prep_time">
@@ -16,6 +17,6 @@
   <div>
     Image Url: <input type="text" name="image_url">
   </div>
-  <input type="submit" value="Create Recipe">
+  <input type="submit" value="Create Recipe"> <!-- the submit button is needed for the new/create actions -->
 <!-- </form> -->
 <% end %>

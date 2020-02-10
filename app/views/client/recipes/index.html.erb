@@ -1,9 +1,9 @@
 <h1>All Recipes</h1>
 
 <% @recipes.each do |recipe| %>
-  <h2><a href="/client/recipes/<%= recipe["id"] %>"><%= recipe['title'] %></a></h2>
-  <h3><%= recipe['chef'] %></h3>
-  <h4><%= recipe['ingredients'] %></h4>
-  <h4><%= recipe['directions'] %></h4>
+  <h2>Name of Recipe: <a href="/client/recipes/<%= recipe["id"] %>"><%= recipe['title'] %></a></h2> <!-- The recipe[id] allows the id of the recipe to be passed in dynamically and this syntax highlights all the recipes titles cause it is within a loop -->
+  <h3> Chef: <%= recipe['chef'] %></h3>
+  <h4>Ingredients: <%= recipe['ingredients'] %></h4>
+  <h4>Directions: <%= recipe['directions'] %></h4>
   <br>
 <% end %>

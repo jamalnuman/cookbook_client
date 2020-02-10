@@ -9,6 +9,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+      <a href="/client/recipes/new">New Recipe</a> <!-- Now these tags will appear on all webpages  -->
+      <a href="/client/recipes">Home</a>
+    </div>
+    <%= yield %> <!-- This is where the individual page goes..for example, the show or the index...this provides dry code -->
   </body>
 </html>
